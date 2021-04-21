@@ -1,6 +1,4 @@
 {% load static %}
-{% load crispy_forms_tags %}
-{% load bootstrap4 %}
 <!DOCTYPE html>
 <html  >
 <head>
@@ -13,7 +11,7 @@
   <meta name="description" content="">
 
 
-  <title>Home</title>
+  <title>Thank you</title>
   <link rel="stylesheet" href="{% static 'tether/tether.min.css' %}">
   <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-grid.min.css' %}">
@@ -27,34 +25,24 @@
 </head>
 <body>
 
-  <section class="header6 cid-sv9DEilztH mbr-fullscreen" id="header6-3">
+  <section class="header4 cid-svfyx71ySI mbr-fullscreen" id="header4-o">
 
 
 
-    <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(68, 121, 217);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="content-wrap">
+                <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-1"><strong>Thank you {{vol_name}}</strong></h1>
 
-    <div class="align-center container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-10">
-                <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-1"><strong>Covid Data India</strong></h1>
+                <p class="mbr-fonts-style mbr-text mbr-white mb-3 display-7">We will share your details to the concerned people around your location. Let us join hands in saving people with whatever we can and we will come out of this together.&nbsp;<br><br>#WeCanDoThis</p>
 
-                <p class="mbr-text mbr-white mbr-fonts-style display-7">We are a private group of friends trying to help people with information <br>that we can collect about COVID based services in India. <br><br>The site is exclusively for volunteers and people who need help in this troubling situation. <br><br>We can do this together!!!</p>
-
-                <form method="post">
-                        {% csrf_token %}
-                        {{ form|crispy }}
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <br><br>
-                </form>
-
-
-                <div class="mbr-section-btn mt-3"><a class="btn btn-danger display-4" href="http://localhost:8000/volunteer_reg/">Register as a Volunteer</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="http://localhost:8000/">Back to home</a></div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="footer7 cid-sv9G0dp9tS" once="footers" id="footer7-7">
+<section class="footer7 cid-sv9G0dp9tS" once="footers" id="footer7-n">
 
 
 
@@ -68,8 +56,8 @@
             </div>
         </div>
     </div>
-</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/r" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
-  <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Build a website - <a href="https://mobirise.site/v" style="color:#aaa;">Click for more</a></p>
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/c" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+  <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Mobirise web software - <a href="https://mobirise.site/n" style="color:#aaa;">Get now</a></p>
 </section>
 <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'popper/popper.min.js' %}"></script>

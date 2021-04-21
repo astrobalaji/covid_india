@@ -20,6 +20,8 @@ from services import views as service_views
 from medical_services import views as med_serv_views
 from food_services import views as food_serv_views
 from updatedata import views as data_views
+from volunteer_ob.views import VolObViews
+from thankyou import views as thank_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +30,6 @@ urlpatterns = [
     path('remedesvir/<slug>', med_serv_views.index),
     path('food/<slug>', food_serv_views.index),
     path('updatedb/', data_views.index),
+    path('volunteer_reg/', VolObViews.as_view()),
+    path('thankyou/<pk>', thank_views.index),
 ]

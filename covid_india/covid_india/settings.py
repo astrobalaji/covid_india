@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'homepage',
     'medical_services',
     'food_services',
+    'volunteer_ob',
     'services',
     'bootstrap4',
     'crispy_forms',
