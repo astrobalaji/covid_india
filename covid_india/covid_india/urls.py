@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from homepage.views import home_view
+from services import views as service_views
+from medical_services import views as med_serv_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view.as_view())
+    path('', home_view.as_view()),
+    path('services/<slug>', service_views.index),
+    path('remedesvir/<slug>', med_serv_views.index),
 ]

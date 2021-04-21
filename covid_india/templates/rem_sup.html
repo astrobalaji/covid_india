@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html  >
 <head>
@@ -6,27 +7,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <link rel="shortcut icon" href="{% static 'images/logo5.png' %}" type="image/x-icon">
   <meta name="description" content="">
-  
-  
+
+
   <title>services_2</title>
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
-  
+  <link rel="stylesheet" href="{% static 'tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{% static 'theme/css/style.css' %}">
+  <link rel="preload" as="style" href="{% static 'mobirise/css/mbr-additional.css' %}"><link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css' %}" type="text/css">
+
+
+
+
 </head>
 <body>
-  
+{% if sup_exists %}
   <section class="features9 cid-sveBzRcat7" id="features10-e">
     <!---->
-    
+
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(190, 211, 249);">
     </div>
     <div class="container">
@@ -34,43 +35,44 @@
             <h3 class="mbr-section-title mbr-fonts-style mb-0 display-2">
                 <strong>List of Remedesvir Suppliers</strong><strong><br></strong></h3>
             <h4 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-5">
-                State Name</h4>
+                {{ state_name }}</h4>
         </div>
         <div class="row mt-4">
+          {% for sup in suppliers %}
             <div class="card col-12">
                 <div class="card-wrapper">
                     <div class="top-line row">
                         <div class="col">
-                            <h4 class="card-title mbr-fonts-style display-5"><strong>dist_name</strong></h4>
+                            <h4 class="card-title mbr-fonts-style display-5"><strong>{{sup.dist_name}}</strong></h4>
                         </div>
                         <div class="col-auto">
                             <p class="price mbr-fonts-style display-5">
-                                Telephone</p>
+                                {{sup.telephone}}</p>
                         </div>
                     </div>
                     <div class="bottom-line">
-                        <p class="mbr-text mbr-fonts-style display-7">address :<br>email address:</p>
+                        <p class="mbr-text mbr-fonts-style display-7">address : {{sup.address}}<br>email: {{sup.email}}</p>
                     </div>
                 </div>
             </div>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            {% endfor %}
+
+
+
+
+
+
+
+
+
+
         </div>
     </div>
 </section>
-
+{% else %}
 <section class="info1 cid-sveG1uuxek" id="info1-f">
-    
-    
+
+
     <div class="align-center container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
@@ -83,11 +85,12 @@
     </div>
 </section>
 
+{% endif %}
 <section class="footer7 cid-sv9G0dp9tS" once="footers" id="footer7-c">
 
-    
 
-    
+
+
 
     <div class="container">
         <div class="media-container-row align-center mbr-white">
@@ -97,8 +100,16 @@
             </div>
         </div>
     </div>
-</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/e" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Made with <a href="https://mobirise.site/a" style="color:#aaa;">Mobirise</a></p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/c" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+  <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Design a <a href="https://mobirise.site/y" style="color:#aaa;">website</a> with Mobirise</p>
+</section>
+<script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'popper/popper.min.js' %}"></script>
+<script src="{% static 'tether/tether.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'smoothscroll/smooth-scroll.js' %}"></script>
+<script src="{% static 'theme/js/script.js' %}"></script>
+
+
 </body>
 </html>
