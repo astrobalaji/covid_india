@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap);
+
+
+
+
+
 body {
   font-family: Jost;
 }
@@ -518,7 +524,7 @@ a.text-black:focus,
 a.text-black.active {
   color: #000000 !important;
 }
-a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-caption) {
+a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]) {
   position: relative;
   background-image: transparent;
   background-size: 10000px 2px;
@@ -526,7 +532,7 @@ a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-cap
   background-position: 0px 1.2em;
   background-position: -10000px 1.2em;
 }
-a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-caption):hover {
+a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]):hover {
   transition: background-position 2s ease-in-out;
   background-image: linear-gradient(currentColor 50%, currentColor 50%);
   background-position: 0px 1.2em;
@@ -789,12 +795,12 @@ a {
   padding-bottom: 30px;
   background-color: #232323;
 }
-.cid-svcL6ko9rI {
+.cid-sveBzRcat7 {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: #ffffff;
+  background-image: url("../../../assets/images/background5.jpg");
 }
-.cid-svcL6ko9rI .card-wrapper {
+.cid-sveBzRcat7 .card-wrapper {
   background-color: #fafafa;
   margin-bottom: 2rem;
   border-radius: 4px;
@@ -803,21 +809,34 @@ a {
   padding: 2rem;
   padding-top: 3rem;
 }
-.cid-svcL6ko9rI .mbr-section-title,
-.cid-svcL6ko9rI .mbr-section-subtitle {
+.cid-sveBzRcat7 .mbr-section-title,
+.cid-sveBzRcat7 .mbr-section-subtitle {
   text-align: center;
 }
 @media (min-width: 992px) {
-  .cid-svcL6ko9rI .card-wrapper {
+  .cid-sveBzRcat7 .card-wrapper {
     padding-left: 4rem;
     padding-right: 4rem;
   }
 }
 @media (max-width: 767px) {
-  .cid-svcL6ko9rI .card-wrapper {
+  .cid-sveBzRcat7 .card-wrapper {
     padding: 1rem;
     padding-top: 2rem;
   }
+}
+.cid-sveG1uuxek {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #4479d9;
+}
+.cid-sveG1uuxek .mbr-section-title {
+  color: #ffffff;
+  text-align: left;
+}
+.cid-sveG1uuxek .mbr-text,
+.cid-sveG1uuxek .mbr-section-btn {
+  color: #ffffff;
 }
 .cid-sv9G0dp9tS {
   padding-top: 30px;

@@ -8,13 +8,7 @@ import json
 
 code_state = json.load(open('lookup_data/code_state.json', 'r'))
 # Create your views here.
-#@transaction.commit_manually
-def update_from_csv():
-    df = pd.read_csv("../data/Remedesivir_cleaned.csv")
-    for item in df.to_dict('records'):
-        entry = med_serv(**item)
-        entry.save()
-    transaction.commit()
+
 
 def index(request, slug, *args, **kwargs):
     state = code_state[slug]

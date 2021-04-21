@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'images/logo5.png' %}" type="image/x-icon">
+  <meta name="description" content="">
+
+
+  <title>Food Suppliers</title>
+  <link rel="stylesheet" href="{% static 'tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{% static 'theme/css/style.css' %}">
+  <link rel="preload" as="style" href="{% static 'mobirise/css/mbr-additional.css' %}"><link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css' %}" type="text/css">
+
+
+
+
+</head>
+<body>
+{% if sup_exists %}
+  <section class="features9 cid-svfgzX0uqf" id="features10-h">
+    <!---->
+
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(190, 211, 249);">
+    </div>
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style mb-0 display-2">
+                <strong>Food Suppliers</strong></h3>
+            <h4 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-5">{{state_name}}</h4>
+        </div>
+        <div class="row mt-4">
+          {% for sup in suppliers %}
+            <div class="card col-12">
+                <div class="card-wrapper">
+                    <div class="top-line row">
+                        <div class="col">
+                            <h4 class="card-title mbr-fonts-style display-5"><strong>{{sup.name}}</strong></h4>
+                        </div>
+                        <div class="col-auto">
+                            <p class="price mbr-fonts-style display-5">{{sup.number}}</p>
+                        </div>
+                    </div>
+                    <div class="bottom-line">
+                        <p class="mbr-text mbr-fonts-style display-7">City: {{sup.city}}&nbsp;<br>Area: {{sup.area}}<br>Hours: {{sup.hours}}<br>Service: {{sup.service}}<br>Social: {{sup.social}}<br>Delivery: {{sup.delivery}}<br></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="info1 cid-sveG1uuxek" id="info1-f">
+
+
+    <div class="align-center container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <h3 class="mbr-section-title mb-4 mbr-fonts-style display-1">
+                    <strong>Unfortunately we couldn't find any suppliers we know in your state.&nbsp;</strong></h3>
+                <p class="mbr-text mb-5 mbr-fonts-style display-5">But check for volunteers in your region</p>
+                <div class="mbr-section-btn"><a class="btn btn-white display-4" href="https://mobiri.se">Check Volunteers</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}
+<section class="footer7 cid-sv9G0dp9tS" once="footers" id="footer7-g">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    The website is built by a group of friends. Information shared in this website is intended to help those in need. Please do verify if certain services still operate while we will do our best to curate them.&nbsp;<br><br>Got more questions or want to help us out in building and maintaining this website?<br>Contact us: hello@skill-ex.in</p>
+            </div>
+        </div>
+    </div>
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/p" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+  <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Page was <a href="https://mobirise.site/g" style="color:#aaa;">built</a> with Mobirise</p>
+</section>
+<script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'popper/popper.min.js' %}"></script>
+<script src="{% static 'tether/tether.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'smoothscroll/smooth-scroll.js' %}"></script>
+<script src="{% static 'theme/js/script.js' %}"></script>
+
+
+</body>
+</html>
