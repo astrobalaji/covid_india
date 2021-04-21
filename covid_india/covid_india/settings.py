@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homepage',
+    'medical_services',
+    'services',
     'bootstrap4',
     'crispy_forms',
 ]
