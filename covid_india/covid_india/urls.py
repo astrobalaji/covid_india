@@ -19,11 +19,13 @@ from homepage.views import home_view
 from services import views as service_views
 from medical_services import views as med_serv_views
 from food_services import views as food_serv_views
+from updatedata import views as data_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view.as_view()),
     path('services/<slug>', service_views.index),
     path('remedesvir/<slug>', med_serv_views.index),
-    path('food/<slug>', food_serv_views.index)
+    path('food/<slug>', food_serv_views.index),
+    path('updatedb/', data_views.index),
 ]

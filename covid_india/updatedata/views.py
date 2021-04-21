@@ -9,14 +9,13 @@ from food_services.models import food_ser
 
 # Create your views here.
 def med_serv_update_from_csv():
+    med_serv.objects.all().delete()
     df = pd.read_csv("../data/Remedesivir_cleaned.csv")
-    for item in df.to_dict('records'):
-        entry = med_serv(**item)
-        entry.save()
-    transaction.commit()
+    med_serv.objects.bulk_create(med_serv(**vals) for vals in df.to_dict('records'))
 
 
 def food_serv_update():
+    food_ser.objects.all().delete()
     state_gcode = [
         ('MH', '0'),
         ('DL', '794930816'),
@@ -76,3 +75,9 @@ def food_serv_update():
             food_ser.objects.bulk_create(food_ser(**vals) for vals in temp_df.to_dict('records'))
         except:
             print(state,"failed!!!")
+
+
+def index(request):
+    med_serv_update_from_csv()
+    food_serv_update()
+    return render(request, 'good_karma.html')
