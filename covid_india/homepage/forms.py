@@ -2,7 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
-states = [
+state_choices = [
             ('AP', 'Andhra Pradesh'),
             ('AR', 'Arunachal Pradesh'),
             ('AS', 'Assam'),
@@ -32,3 +32,5 @@ states = [
             ('UK', 'Uttarakhand'),
             ('WB', 'West Bengal')
 ]
+class state_sel(forms.Form):
+    state = forms.ChoiceField(label = '',choices = state_choices, required = True,widget=forms.Select(attrs={'style': 'width: 30%', 'cols': 200,'rows': 1}))
