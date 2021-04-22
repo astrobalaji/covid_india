@@ -26,7 +26,7 @@ with open('web_key.dat', 'r') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'localhost', '[::1]']
+ALLOWED_HOSTS = ['*', 'localhost', 'covidindsos.in', 'www.covidindsos.in', '[::1]']
 
 
 # Application definition
