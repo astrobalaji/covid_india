@@ -12,6 +12,7 @@ from hospitals.models import hosp_dat
 def med_serv_update_from_csv():
     med_serv.objects.all().delete()
     df = pd.read_csv("../data/Remedesivir_cleaned.csv")
+    df = df.fillna('')
     med_serv.objects.bulk_create(med_serv(**vals) for vals in df.to_dict('records'))
 
 
@@ -72,6 +73,7 @@ def food_serv_update():
         col_list = ['State', 'City', 'Area', 'Name', 'Number', 'Hours', 'Service', 'Social', 'Delivery']
         temp_df.rename(columns = rename_dict, inplace = True)
         temp_df = temp_df[col_list]
+        temp_df = temp_df.fillna('')
         try:
             food_ser.objects.bulk_create(food_ser(**vals) for vals in temp_df.to_dict('records'))
         except:
@@ -82,6 +84,7 @@ def hospital_update():
     state_code = json.load(open("lookup_data/state_code.json", 'r'))
     df = pd.read_csv('../data/hospitals_cleaned.csv')
     df['state_code'] = df['state'].apply(lambda x: state_code[x])
+    df = df.fillna('')
     hosp_dat.objects.bulk_create(hosp_dat(**vals) for vals in df.to_dict('records'))
 
 def index(request):
