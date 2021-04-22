@@ -7,4 +7,4 @@ class med_serv(models.Model):
     dist_name = models.CharField(max_length= 2000)
     address = models.CharField(max_length = 20000)
     email = models.CharField(max_length = 2000)
-    telephone = models.CharField(max_length = 200)
+    telephone = models.CharField(max_length = 2000)

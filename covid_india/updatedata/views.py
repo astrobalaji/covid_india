@@ -80,7 +80,6 @@ def food_serv_update():
 def hospital_update():
     hosp_dat.objects.all().delete()
     state_code = json.load(open("lookup_data/state_code.json", 'r'))
-    med_serv.objects.all().delete()
     df = pd.read_csv('../data/hospitals_cleaned.csv')
     df['state_code'] = df['state'].apply(lambda x: state_code[x])
     hosp_dat.objects.bulk_create(hosp_dat(**vals) for vals in df.to_dict('records'))
