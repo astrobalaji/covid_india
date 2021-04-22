@@ -27,5 +27,6 @@ def index(request, slug, *args, **kwargs):
     context = {}
     context['suppliers'] = food_sup_lis
     context['state_name'] = state_name
+    context['state_code'] = slug
     context['sup_exists'] = sup_exists
     return render(request, 'food_sup.html', context)

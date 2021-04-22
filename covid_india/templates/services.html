@@ -40,7 +40,7 @@
                         <h4 class="card-title mbr-fonts-style align-center mb-4 display-1">
                             <strong>{{state_name}}</strong></h4>
                         <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                            We are really sorry if you can't find the data that you need at this moment. We will keep expanding the data to make sure everyone and every need is served.</p>
+                            Select your service below</p>
 
                     </div>
                 </div>
@@ -82,7 +82,7 @@
 
                         <p class="mbr-text mbr-fonts-style mt-3 display-7">Check if any hospitals near you has beds and facilities that you might need. </p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-black display-7" target="_blank">Check &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="http://localhost:8000/hospital/{{state_code}}" class="btn item-btn btn-black display-7" target="_blank">Check &gt;</a></div>
                 </div>
             </div>
             <div class="item features-image сol-12 col-md-6 col-lg-4">
@@ -113,7 +113,7 @@
                 <p class="mbr-text mb-5 mbr-fonts-style display-5">
                     Don't worry, browse through our list of volunteers and see if anyone can help you
                 </p>
-                <div class="mbr-section-btn"><a class="btn btn-white display-4" href="https://mobiri.se">Request assistance</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-white display-4" href="http://localhost:8000/volunteers/{{state_code}}">Request assistance</a></div>
             </div>
         </div>
     </div>

@@ -1,10 +1,11 @@
 from django.shortcuts import render
 import pandas as pd
 import numpy as np
+import json
 
 from medical_services.models import med_serv
 from food_services.models import food_ser
-
+from hospitals.models import hosp_dat
 
 
 # Create your views here.
@@ -76,8 +77,16 @@ def food_serv_update():
         except:
             print(state,"failed!!!")
 
+def hospital_update():
+    hosp_dat.objects.all().delete()
+    state_code = json.load(open("lookup_data/state_code.json", 'r'))
+    med_serv.objects.all().delete()
+    df = pd.read_csv('../data/hospitals_cleaned.csv')
+    df['state_code'] = df['state'].apply(lambda x: state_code[x])
+    hosp_dat.objects.bulk_create(hosp_dat(**vals) for vals in df.to_dict('records'))
 
 def index(request):
     med_serv_update_from_csv()
     food_serv_update()
+    hospital_update()
     return render(request, 'good_karma.html')
