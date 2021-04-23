@@ -688,8 +688,23 @@ body {
 a {
   transition: color 0.6s;
 }
-.cid-sv9DEilztH {
+.cid-svqiTD0QwH {
   background-image: url("../../../assets/images/mbr-7.jpg");
+}
+.cid-svqiTD0QwH .mbr-section-title {
+  color: #ffffff;
+}
+.cid-svqiTD0QwH .mbr-text,
+.cid-svqiTD0QwH .mbr-section-btn {
+  color: #ffffff;
+}
+.cid-svqjet3TtE {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #40b0bf;
+}
+.cid-svqjet3TtE .mbr-section-title {
+  color: #ffffff;
 }
 .cid-sv9G0dp9tS {
   padding-top: 30px;
