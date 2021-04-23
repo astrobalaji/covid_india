@@ -43,4 +43,4 @@ state_choices = [
 
 
 class state_sel(forms.Form):
-    state = forms.ChoiceField(label = '',choices = state_choices, required = True,widget=forms.Select(attrs={'style': 'width: 50%', 'cols': 1200,'rows': 1}))
+    state = forms.ChoiceField(label = 'Select your state',choices = state_choices, required = True,widget=forms.Select(attrs={'style': 'width: 100%', 'cols': 1200,'rows': 1}))
