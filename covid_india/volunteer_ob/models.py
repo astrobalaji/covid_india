@@ -9,3 +9,5 @@ class VolunteerOB(models.Model):
     number = models.CharField(max_length = 200)
     email = models.CharField(max_length = 200)
     services_offered = models.CharField(max_length = 20000)
+    plasma_donor = models.CharField(max_length = 200)
+    blood_type = models.CharField(max_length = 200)

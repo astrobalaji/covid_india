@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.3.5, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.3.5, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+
+
+  <title>Medical Suppliers</title>
+  <link rel="stylesheet" href="{% static 'tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{% static 'theme/css/style.css' %}">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="{% static 'mobirise/css/mbr-additional.css' %}"><link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css' %}" type="text/css">
+
+
+
+
+</head>
+<body>
+{% if sup_exists %}
+  <section class="features9 cid-sveBzRcat7" id="features10-e">
+    <!---->
+
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(190, 211, 249);">
+    </div>
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style mb-0 display-2">
+                <strong>List of Oxygen Suppliers</strong><strong><br></strong></h3>
+                <h4 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-5">
+                    {{ state_name }}</h4>
+            </div>
+            <div class="row mt-4">
+              {% for sup in sup_lis %}
+                <div class="card col-12">
+                    <div class="card-wrapper">
+                        <div class="top-line row">
+                            <div class="col">
+                                <h4 class="card-title mbr-fonts-style display-5"><strong>{{sup.Contact}}</strong></h4>
+                            </div>
+                            <div class="col-auto">
+                                <p class="price mbr-fonts-style display-5">
+                                    {{sup.Number}}</p>
+                            </div>
+                        </div>
+                        <div class="bottom-line">
+                            <p class="mbr-text mbr-fonts-style display-7">City : {{sup.City}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="info1 cid-sveG1uuxek" id="info1-f">
+
+
+    <div class="align-center container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <h3 class="mbr-section-title mb-4 mbr-fonts-style display-1">
+                    <strong>Unfortunately we couldn't find any suppliers we know in your state.&nbsp;</strong></h3>
+                <p class="mbr-text mb-5 mbr-fonts-style display-5">But check for volunteers in your region</p>
+                <div class="mbr-section-btn"><a class="btn btn-white display-4" href="http://covidindsos.in/volunteers/{{state_code}}">Check Volunteers</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}
+
+<section class="footer7 cid-sv9G0dp9tS" once="footers" id="footer7-c">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    The website is built by a group of friends. Information shared in this website is intended to help those in need. Please do verify if certain services still operate while we will do our best to curate them.&nbsp;<br><br>Got more questions or want to help us out in building and maintaining this website?<br>Contact us: hello@skill-ex.in</p>
+            </div>
+        </div>
+    </div>
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/g" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+  <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Designed with Mobirise - <a href="https://mobirise.site/k" style="color:#aaa;">Try here</a></p>
+</section>
+<script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'popper/popper.min.js' %}"></script>
+<script src="{% static 'tether/tether.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'web/assets/cookies-alert-plugin/cookies-alert-core.js' %}"></script>
+<script src="{% static 'web/assets/cookies-alert-plugin/cookies-alert-script.js' %}"></script>
+<script src="{% static 'smoothscroll/smooth-scroll.js' %}"></script>
+<script src="{% static 'theme/js/script.js' %}"></script>
+
+
+<div id="cookie-dialog" style="display: none;"><div id="cookiesdirective"><div style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgb(0, 0, 0); opacity: 0.8; z-index: 9999;"></div><div style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; display: flex; align-items: center; z-index: 10000"><div class="cookie-wrapper" style="position: relative; width: 100%; max-width: 500px; margin-right: auto; margin-left: auto; padding: 1rem; text-align: center; border-radius: .3rem; box-shadow: 0 10px 40px 0 rgba(0,0,0,0.2); color:#424a4d; background:rgba(234, 239, 241, 0.99);"><div class="mbr-text"><p class="display-7"><p>We hereby inform that everyone involved with <strong style="color: blue;">covidindsos.in</strong> are doing this on the basis of good karma and not to make any monetary benefits from this website. We try our best to curate and verify every single data point that we add to our website. However, there is a growing concern about scammers who make use of this dire situation. <strong>Hence, we would request everyone to be cautious if anyone demands money. </strong> We neither engage ourselves into any monetary benefits nor we promote such activities. Hence, we don't take up the responsibility for any such fraudulent incidences. We kindly request you to accept these terms and conditions before using our website.</p>
+<p>If you find any such actionable data point on our website, please do report it to us at <a style='color: #424a4d; text-decoration: underline;'
+href="mailto:hello@skill-ex.in
+">
+hello@skill-ex.in
+</a></p></p></div><div class="mbr-section-btn"><a style="margin:0; background-color:#e43f3f !important; color:#FFFFFF!important; border-color:#e43f3f !important;;" class="btn btn-sm btn-primary display-7" id="impliedsubmit">Agree</a></div></div></div></div></div>
+  <input name="cookieData" type="hidden" data-cookie-customDialogSelector='#cookie-dialog' data-cookie-colorText='#424a4d' data-cookie-colorBg='rgba(234, 239, 241, 0.99)' data-cookie-textButton='Agree' data-cookie-colorButton='#e43f3f' data-cookie-colorLink='#424a4d' data-cookie-underlineLink='true' data-cookie-text="<p>We hereby inform that everyone involved with <strong style="color: blue;">covidindsos.in</strong> are doing this on the basis of good karma and not to make any monetary benefits from this website. We try our best to curate and verify every single data point that we add to our website. However, there is a growing concern about scammers who make use of this dire situation. <strong>Hence, we would request everyone to be cautious if anyone demands money. </strong> We neither engage ourselves into any monetary benefits nor we promote such activities. Hence, we don't take up the responsibility for any such fraudulent incidences. We kindly request you to accept these terms and conditions before using our website.</p>
+<p>If you find any such actionable data point on our website, please do report it to us at <a
+href="mailto:hello@skill-ex.in
+">
+hello@skill-ex.in
+</a></p>">
+  </body>
+</html>

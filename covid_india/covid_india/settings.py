@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'medical_services',
     'food_services',
     'hospitals',
+    'oxygen_supliers',
     'volunteer_ob',
     'services',
     'bootstrap4',

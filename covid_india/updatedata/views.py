@@ -6,6 +6,10 @@ import json
 from medical_services.models import med_serv
 from food_services.models import food_ser
 from hospitals.models import hosp_dat
+from oxygen_supliers.models import oxy_sup
+
+state_code = json.load(open("lookup_data/state_code.json", 'r'))
+state_lis = list(state_code.keys())
 
 
 # Create your views here.
@@ -15,6 +19,17 @@ def med_serv_update_from_csv():
     df = df.fillna('')
     med_serv.objects.bulk_create(med_serv(**vals) for vals in df.to_dict('records'))
 
+def jaccard_similarity(list1, list2):
+    intersection = len(list(set(list1).intersection(list2)))
+    union = (len(list1) + len(list2)) - intersection
+    return float(intersection) / union
+
+def normalize_state(name):
+    df_temp = pd.DataFrame()
+    df_temp['state_in'] = state_lis
+    df_temp['similarity'] = df_temp['state_in'].apply(lambda x: jaccard_similarity(x, name))
+    df_temp.sort_values(by = 'similarity', ascending = False, inplace = True)
+    return df_temp.head(1)['state_in'].values[0]
 
 def food_serv_update():
     food_ser.objects.all().delete()
@@ -81,11 +96,20 @@ def food_serv_update():
 
 def hospital_update():
     hosp_dat.objects.all().delete()
-    state_code = json.load(open("lookup_data/state_code.json", 'r'))
     df = pd.read_csv('../data/hospitals_cleaned.csv')
     df['state_code'] = df['state'].apply(lambda x: state_code[x])
     df = df.fillna('')
     hosp_dat.objects.bulk_create(hosp_dat(**vals) for vals in df.to_dict('records'))
+
+def oxygen_update():
+    sheet_url = "https://docs.google.com/spreadsheets/d/1fHiBtzxBC_3Q7I5SXr_GpNA4ivT73w4W4hjK6IkGDBY/export?format=csv&gid=2074968679"
+    df = pd.read_csv(sheet_url)
+    df.dropna(subset = ['State'], inplace = True)
+    df['State'] = df['State'].apply(normalize_state)
+    df['state_code'] = df['State'].apply(lambda x: state_code[x])
+    df.fillna('', inplace = True)
+    df = df[['state_code', 'State', 'City', 'Contact', 'Number']]
+    oxy_sup.objects.bulk_create(oxy_sup(**vals) for vals in df.to_dict('records'))
 
 def index(request):
     med_serv_update_from_csv()
