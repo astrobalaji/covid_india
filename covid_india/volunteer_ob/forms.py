@@ -44,12 +44,12 @@ state_choices = [
 ]
 
 class VolOb(forms.ModelForm):
-    name = forms.CharField(label = 'Name', required = True, widget = forms.TextInput(attrs={'style': 'width: 30%', 'cols': 200,'rows': 1}))
-    city = forms.CharField(label = 'City', required = True, widget = forms.TextInput(attrs={'style': 'width: 30%', 'cols': 200,'rows': 1}))
-    state_code = forms.ChoiceField(label = 'State',choices = state_choices, required = True,widget=forms.Select(attrs={'style': 'width: 30%', 'cols': 200,'rows': 1}))
-    number = forms.CharField(label = 'Mobile Number', required = True, widget = forms.TextInput(attrs={'style': 'width: 30%', 'cols': 200,'rows': 1}))
-    email = forms.CharField(label = 'Email Address', required = True, widget = forms.TextInput(attrs={'style': 'width: 30%', 'cols': 200,'rows': 1}))
-    services_offered = forms.CharField(widget = forms.Textarea(attrs={'style': 'width: 50%'}), label = 'Services offered', help_text = "Separate each one of them by a comma (',')", required = True)
+    name = forms.CharField(label = 'Name', required = True, widget = forms.TextInput(attrs={'style': 'width: 100%', 'cols': 200,'rows': 1}))
+    city = forms.CharField(label = 'City', required = True, widget = forms.TextInput(attrs={'style': 'width: 100%', 'cols': 200,'rows': 1}))
+    state_code = forms.ChoiceField(label = 'State',choices = state_choices, required = True,widget=forms.Select(attrs={'style': 'width: 100%', 'cols': 200,'rows': 1}))
+    number = forms.CharField(label = 'Mobile Number', required = True, widget = forms.TextInput(attrs={'style': 'width: 100%', 'cols': 200,'rows': 1}))
+    email = forms.CharField(label = 'Email Address', required = True, widget = forms.TextInput(attrs={'style': 'width: 100%', 'cols': 200,'rows': 1}))
+    services_offered = forms.CharField(widget = forms.Textarea(attrs={'style': 'width: 100%'}), label = 'Services offered', help_text = "Separate each one of them by a comma (',')", required = True)
 
     class Meta:
         model = VolunteerOB

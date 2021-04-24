@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.3.5, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.3.5, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'images/logo5.png' %}" type="image/x-icon">
+  <meta name="description" content="">
+
+
+  <title>City Selection</title>
+  <link rel="stylesheet" href="{% static 'web/assets/mobirise-icons2/mobirise2.css' %}">
+  <link rel="stylesheet" href="{% static 'web/assets/mobirise-icons/mobirise-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{% static 'theme/css/style.css' %}">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="{% static 'mobirise/css/mbr-additional.css' %}"><link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css' %}" type="text/css">
+
+
+
+
+</head>
+<body>
+
+  <section class="content16 cid-svqKxqShu5" id="content16-13">
+
+
+
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+                <div class="mbr-section-head align-center mb-4">
+                    <h3 class="mbr-section-title mb-0 mbr-fonts-style display-2">
+                        <strong>{{state_name}}</strong></h3>
+                    <h4 class="mbr-section-subtitle mb-0 mt-2 mbr-fonts-style display-5">Select Your City</h4>
+                </div>
+                <div id="bootstrap-accordion_17" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
+                    {% for city in cities %}
+                    <div class="card mb-3">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <a role="button" class="panel-title collapsed" data-toggle="collapse" data-core="" href="#collapse1_17" aria-expanded="false" aria-controls="collapse1">
+                                <h6 class="panel-title-edit mbr-fonts-style mb-0 display-7"><strong>{{city.name}}</strong></h6>
+                                <span class="sign mbr-iconfont mbri-arrow-down"></span>
+                            </a>
+                        </div>
+                        <div id="collapse1_17" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_17">
+                            <div class="panel-body">
+                                <p class="mbr-fonts-style panel-text display-4"><a href="{{city.pointer}}" class="text-primary">Check availability</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer7 cid-sv9G0dp9tS" once="footers" id="footer7-v">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    The website is built by a group of friends. Information shared in this website is intended to help those in need. Please do verify if certain services still operate while we will do our best to curate them.&nbsp;<br><br>Got more questions or want to help us out in building and maintaining this website?<br>Contact us: hello@skill-ex.in</p>
+            </div>
+        </div>
+    </div>
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/w" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+  <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">The <a href="https://mobirise.site/e" style="color:#aaa;">site</a> was started with Mobirise</p>
+</section>
+<script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'popper/popper.min.js' %}"></script>
+<script src="{% static 'tether/tether.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'smoothscroll/smooth-scroll.js' %}"></script>
+<script src="{% static 'mbr-switch-arrow/mbr-switch-arrow.js' %}"></script>
+<script src="{% static 'theme/js/script.js' %}"></script>
+
+
+</body>
+</html>

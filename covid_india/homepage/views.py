@@ -11,7 +11,7 @@ class home_view(View):
 
     def get(self, request):
         form = self.form_class()
-        return render(request, "index_new.html", {'form':form})
+        return render(request, "index.html", {'form':form})
     def post(self, request):
         form = self.form_class(request.POST)
         if form.is_valid:
