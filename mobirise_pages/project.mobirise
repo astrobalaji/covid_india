@@ -48,9 +48,21 @@
     "sitemapSwitcher": false,
     "sitemapSwitcherAuto": false,
     "siteUrl": false,
-    "cookiesAlert": false,
+    "cookiesAlert": {
+      "customDialogSelector": true,
+      "colorText": "#424a4d",
+      "colorBg": "#eaeff1",
+      "colorButton": "#e43f3f",
+      "colorLink": "#424a4d",
+      "underlineLink": true,
+      "opacity": "99",
+      "opacityOverlay": "80",
+      "text": "<p>We hereby inform that everyone involved with <strong style=\"color: blue;\">covidindsos.in</strong> are doing this on the basis of good karma and not to make any monetary benefits from this website. We try our best to curate and verify every single data point that we add to our website. However, there is a growing concern about scammers who make use of this dire situation. <strong>Hence, we would request everyone to be cautious if anyone demands money. </strong> We neither engage ourselves into any monetary benefits nor we promote such activities. Hence, we don't take up the responsibility for any such fraudulent incidences. We kindly request you to accept these terms and conditions before using our website.</p>\n<p>If you find any such actionable data point on our website, please do report it to us at <a \nhref=\"mailto:hello@skill-ex.in\n\">\nhello@skill-ex.in\n</a></p>",
+      "textButton": "Agree"
+    },
     "gdpr": false,
-    "screenshot": "screenshot.png"
+    "screenshot": "screenshot.png",
+    "mbrsiteDomain": "qnxtb9cxxe"
   },
   "pages": {
     "index.html": {
