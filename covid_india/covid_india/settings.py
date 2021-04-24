@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'hospitals',
     'oxygen_supliers',
     'volunteer_ob',
+    'whatsapp_groups',
     'services',
     'bootstrap4',
     'crispy_forms',

@@ -148,7 +148,7 @@
         </div>
     </div>
 </section>
-
+{% if wa_exists %}
 <section class="features15 cid-svwGlNquaZ" id="features16-15">
 
 
@@ -160,10 +160,10 @@
                 <div class="col-12 col-lg">
                     <div class="text-wrapper">
                         <h6 class="card-title mbr-fonts-style display-2">
-                            <strong>Join Whatsapp Group Of State_Name</strong></h6>
+                            <strong>Join Whatsapp Group Of {{state_name}}</strong></h6>
                         <p class="mbr-text mbr-fonts-style mb-4 display-4">
                             Join the WhatsApp Group to get leads on Oxygen Cylinders, Concentrators, Hospital Bed Availability, Medicines, &amp; Plasma Donors of your City &amp; State.</p>
-                        <div class="mbr-section-btn mt-3"><a class="btn btn-success display-4" href="https://mobiri.se">Join Whatsapp</a></div>
+                        <div class="mbr-section-btn mt-3"><a class="btn btn-success display-4" href="{{wa_url}}">Join Whatsapp</a></div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
@@ -174,7 +174,9 @@
             </div>
         </div>
     </div>
-</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/m" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
+</section>
+{% endif %}
+<section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/m" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
   <p style="flex: 0 0 auto; margin:0; padding-right:1rem;"><a href="https://mobirise.site/r" style="color:#aaa;">This website</a> was built with Mobirise template</p>
 </section>
 <script src="{% static 'web/assets/jquery/jquery.min.js' %}"></script>
