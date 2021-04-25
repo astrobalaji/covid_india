@@ -114,5 +114,4 @@ def oxygen_update():
 def index(request):
     med_serv_update_from_csv()
     food_serv_update()
-    #hospital_update()
     return render(request, 'good_karma.html')
