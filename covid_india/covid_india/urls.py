@@ -25,6 +25,10 @@ from thankyou import views as thank_views
 from get_volunteers import views as vol_views
 from hospitals import views as hosp_views
 from oxygen_supliers import views as oxy_views
+from django.contrib import admin
+
+admin.autodiscover()
+admin.site.enable_nav_sidebar = False
 
 urlpatterns = [
     path('admin/', admin.site.urls),
