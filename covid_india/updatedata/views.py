@@ -26,7 +26,7 @@ def jaccard_similarity(list1, list2):
     return float(intersection) / union
 
 def normalize_state(name):
-    df_temp = pd.DataFrame()https://github.com/astrobalaji/covid_india.git
+    df_temp = pd.DataFrame()
     df_temp['state_in'] = state_lis
     df_temp['similarity'] = df_temp['state_in'].apply(lambda x: jaccard_similarity(x, name))
     df_temp.sort_values(by = 'similarity', ascending = False, inplace = True)
