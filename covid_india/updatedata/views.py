@@ -17,6 +17,7 @@ def med_serv_update_from_csv():
     med_serv.objects.all().delete()
     df = pd.read_csv("../data/Remedesivir_cleaned.csv")
     df = df.fillna('')
+    df.drop(np.where(np.logical_or((df['state_code'] == 'AP'), (df['state_code'] == 'TS')))[0], axis = 0, inplace = True)
     med_serv.objects.bulk_create(med_serv(**vals) for vals in df.to_dict('records'))
 
 def jaccard_similarity(list1, list2):
@@ -25,7 +26,7 @@ def jaccard_similarity(list1, list2):
     return float(intersection) / union
 
 def normalize_state(name):
-    df_temp = pd.DataFrame()
+    df_temp = pd.DataFrame()https://github.com/astrobalaji/covid_india.git
     df_temp['state_in'] = state_lis
     df_temp['similarity'] = df_temp['state_in'].apply(lambda x: jaccard_similarity(x, name))
     df_temp.sort_values(by = 'similarity', ascending = False, inplace = True)
