@@ -43,7 +43,7 @@ state_choices = [
             ('WB', 'West Bengal'),
 ]
 
-plasma_choices = [ ('y', 'Yes'), ('n', 'No')]
+plasma_choices = [ ('y', 'Yes', 'n', 'No', '', '')]
 blood_choices = [('o-', 'O-'), ('o+', 'O+'), ('a-', 'A-'), ('a+', 'A+'), ('b-', 'B-'), ('b+', 'B+'), ('ab-', 'AB-'), ('ab+', 'AB+')]
 
 class VolOb(forms.ModelForm):
@@ -53,18 +53,14 @@ class VolOb(forms.ModelForm):
     number = forms.CharField(label = 'Mobile Number', required = True, widget = forms.TextInput(attrs={'style': 'width: 100%', 'cols': 200,'rows': 1}))
     email = forms.CharField(label = 'Email Address', required = True, widget = forms.TextInput(attrs={'style': 'width: 100%', 'cols': 200,'rows': 1}))
     services_offered = forms.CharField(widget = forms.Textarea(attrs={'style': 'width: 100%'}), label = 'Services offered', help_text = "Separate each one of them by a comma (',')", required = True)
-    plasma_donor = forms.ChoiceField(choices = plasma_choices, label = "Would you like to be a plasma donor", help_text = "Please check if you satisfy the guidelines (<a href = 'https://bit.ly/3sLrz1h' target='_newtab'> guidelines </a>)", required = True, widget = forms.RadioSelect(choices = plasma_choices))
-    blood_type = forms.ChoiceField(choices = blood_choices, required = False, label = "Select your blood type (if plasma donor)", widget = forms.Select(attrs={'style': 'width: 100%', 'cols': 200,'rows': 1}))
+    plasma_donor = forms.ChoiceField(choices = plasma_choices, label = "Would you like to be a plasma donor", help_text = "Please check if you satisfy the guidelines (<a href = 'https://bit.ly/3sLrz1h' target='_newtab'> guidelines </a>)", required = True, widget = forms.CheckboxSelectMultiple(choices = plasma_choices))
+    blood_type = forms.MultipleChoiceField(choices = blood_choices, required = False, label = "Select your blood type (if plasma donor)", widget = forms.Select(attrs={'style': 'width: 100%', 'cols': 200,'rows': 1}))
     class Meta:
         model = VolunteerOB
         exclude = ['state']
-    def __init__(self, *args, **kwargs):
-        super(VolOb, self).__init__(*args, **kwargs)
     def clean(self):
         cleaned_data = super().clean()
         number_check = cleaned_data.get('number')
-        #print("number_check", number_check.isnumeric())
         if not number_check.isnumeric():
-            #print("error reported")
             raise forms.ValidationError("Please enter only numeric values. Avoid special characters like '+', '-', '/',etc.")
         return cleaned_data

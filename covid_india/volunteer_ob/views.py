@@ -16,13 +16,8 @@ class VolObViews(View):
 
     def post(self, request):
         form = self.form_class(request.POST)
-        print(form.errors)
         if form.is_valid():
-            print("here1")
             volOBdata = form.save(commit = False)
-            print("volOBdata:",volOBdata)
             volOBdata.state = code_state[volOBdata.state_code]
             volOBdata.save()
             return redirect('/thankyou/'+str(volOBdata.pk))
-        else:
-            print(form.errors)
